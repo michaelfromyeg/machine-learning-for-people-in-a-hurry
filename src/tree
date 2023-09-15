@@ -1,0 +1,9 @@
+digraph Tree {
+node [shape=box, fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label="middle-middle-square_o <= 0.5\ncounts = [265, 501]\nclass = positive"] ;
+1 [label="counts = [114, 385]\nclass = positive"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="counts = [151, 116]\nclass = negative"] ;
+0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+}

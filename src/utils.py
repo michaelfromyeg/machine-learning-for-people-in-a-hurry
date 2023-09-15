@@ -2,7 +2,7 @@ import graphviz
 import re
 from sklearn.tree import export_graphviz
 
-def display_tree(feature_names, tree, counts=False):
+def display_tree(feature_names, tree, counts=False, index=0):
     """
     For binary classification only.
     
@@ -26,4 +26,9 @@ def display_tree(feature_names, tree, counts=False):
         dot = re.sub("(\\\\nsamples = [0-9]+)(\\\\nvalue = \[[0-9]+, [0-9]+\])", "", dot)
         dot = re.sub("(samples = [0-9]+)(\\\\nvalue = \[[0-9]+, [0-9]+\])\\\\n", "", dot)
 
-    return graphviz.Source(dot)
+    fie_ext = 'png'
+    temp_img = f"tree-{index}"
+    my_graph = graphviz.Source(dot)
+    my_graph.render(temp_img, format=fie_ext, view=False)
+    
+    return my_graph
